@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #0a0a0f;
+  --color-dark-card: #12121a;
+  --color-dark-border: rgba(255, 255, 255, 0.08);
+  --color-teal: #5DCAA5;
+  --color-teal-dark: #04342C;
+  --color-teal-glow: rgba(93, 202, 165, 0.15);
+  --color-purple: #AFA9EC;
+  --color-purple-glow: rgba(175, 169, 236, 0.12);
+  --color-amber: #FAC775;
+  --color-amber-glow: rgba(250, 199, 117, 0.12);
+  --color-coral: #F09595;
+  --color-coral-glow: rgba(240, 149, 149, 0.08);
+  --color-text: #e8e8ec;
+  --color-text-muted: rgba(255, 255, 255, 0.5);
+  --color-text-dim: rgba(255, 255, 255, 0.35);
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Manrope", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-dark);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
+
+.bg-grid {
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.bg-radial-teal {
+  background: radial-gradient(ellipse 600px 400px at 50% 0%, rgba(93,202,165,0.06), transparent);
+}
+.text-gradient-teal {
+  background: linear-gradient(135deg, #5DCAA5, #8BDDC0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
