@@ -12,7 +12,7 @@ export default function Problem() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
   return (
     <section className="py-20 md:py-28 border-t border-dark-border" ref={ref}>
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="section-wrap">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}>
           <p className="text-xs tracking-[0.2em] text-coral font-medium mb-4 uppercase">El problema</p>
           <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4">Tu negocio pierde dinero de estas formas</h2>

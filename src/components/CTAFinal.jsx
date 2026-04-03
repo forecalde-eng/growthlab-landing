@@ -4,7 +4,7 @@ export default function CTAFinal({ waLink }) {
   return (
     <section className="py-20 md:py-28 border-t border-dark-border bg-radial-teal relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-50" />
-      <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
+      <div className="section-wrap text-center relative z-10" style={{maxWidth:"48rem"}}>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.5 }}>
           <h2 className="font-heading text-3xl md:text-5xl font-semibold mb-4 leading-tight">Listo para crecer con IA?</h2>
           <p className="text-text-muted text-base md:text-lg mb-8 max-w-md mx-auto">Agenda una demo gratuita de 15 minutos. Sin compromiso.</p>

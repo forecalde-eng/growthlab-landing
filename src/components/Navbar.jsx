@@ -12,7 +12,7 @@ export default function Navbar({ waLink }) {
   const [open, setOpen] = useState(false)
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-dark-border bg-dark/80 backdrop-blur-xl">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="section-wrap h-16 flex items-center justify-between">
         <a href="#" className="font-heading text-xl font-semibold tracking-tight">
           <span className="text-teal">Growth</span><span className="text-text">Lab</span>
           <span className="text-text-muted font-light ml-1">AI</span>

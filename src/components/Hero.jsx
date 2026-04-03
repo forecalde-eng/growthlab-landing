@@ -9,7 +9,7 @@ const chatMessages = [
 export default function Hero({ waLink }) {
   return (
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 bg-radial-teal bg-grid overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="section-wrap">
         <div className="text-center max-w-2xl mx-auto">
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
             className="text-xs tracking-[0.2em] text-teal font-medium mb-6 uppercase">

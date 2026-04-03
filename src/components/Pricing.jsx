@@ -9,7 +9,7 @@ const plans = [
 export default function Pricing({ waLink }) {
   return (
     <section id="pricing" className="py-20 md:py-28 border-t border-dark-border">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="section-wrap">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }} className="text-center mb-14">
           <p className="text-xs tracking-[0.2em] text-amber font-medium mb-4 uppercase">Pricing</p>

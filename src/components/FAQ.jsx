@@ -33,7 +33,7 @@ function FAQItem({ faq, index }) {
 export default function FAQ() {
   return (
     <section id="faq" className="py-20 md:py-28 border-t border-dark-border">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="section-wrap" style={{maxWidth:"48rem"}}>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }} className="text-center mb-12">
           <p className="text-xs tracking-[0.2em] text-purple font-medium mb-4 uppercase">FAQ</p>
