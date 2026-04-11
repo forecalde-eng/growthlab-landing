@@ -12,7 +12,7 @@ const WA_LINK = "https://wa.me/593XXXXXXXXX?text=Hola%2C%20quiero%20una%20demo%2
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen bg-dark grain">
       <Navbar waLink={WA_LINK} />
       <Hero waLink={WA_LINK} />
       <Problem />
