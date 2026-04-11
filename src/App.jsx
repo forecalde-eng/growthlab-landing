@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 
-const WA_LINK = "https://wa.me/593XXXXXXXXX?text=Hola%2C%20quiero%20una%20demo%20de%20GrowthLab%20AI";
+const WA_LINK = "https://wa.me/593963820234?text=Hola%21%20Me%20interesa%20automatizar%20mi%20negocio%20con%20IA%20%F0%9F%A4%96";
 
 const navLinks = [
   { label: "Servicios", href: "#servicios" },
