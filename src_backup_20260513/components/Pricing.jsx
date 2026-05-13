@@ -59,31 +59,31 @@ const planStyles = {
   teal: {
     cardBorder: 'border-2 border-teal/35',
     nameText: 'text-teal',
-    priceGrad: 'linear-gradient(135deg, #48BED7, #7AD4E8)',
-    priceGlow: 'drop-shadow(0 0 12px rgba(72,190,215,0.35))',
-    topLine: 'linear-gradient(90deg, transparent 0%, rgba(72,190,215,0.8) 50%, transparent 100%)',
-    divider: 'linear-gradient(90deg, rgba(72,190,215,0.2), transparent)',
-    checkColor: '#48BED7',
+    priceGrad: 'linear-gradient(135deg, #5DCAA5, #8BDDC0)',
+    priceGlow: 'drop-shadow(0 0 12px rgba(93,202,165,0.35))',
+    topLine: 'linear-gradient(90deg, transparent 0%, rgba(93,202,165,0.8) 50%, transparent 100%)',
+    divider: 'linear-gradient(90deg, rgba(93,202,165,0.2), transparent)',
+    checkColor: '#5DCAA5',
     cta: 'bg-teal text-teal-dark hover:brightness-110 hover:scale-[1.02] animate-pulse-glow',
   },
   amber: {
     cardBorder: 'border border-amber/20',
     nameText: 'text-amber',
-    priceGrad: 'linear-gradient(135deg, #48BED7, #7AD4E8)',
-    priceGlow: 'drop-shadow(0 0 12px rgba(72,190,215,0.3))',
-    topLine: 'linear-gradient(90deg, transparent 0%, rgba(72,190,215,0.5) 50%, transparent 100%)',
-    divider: 'linear-gradient(90deg, rgba(72,190,215,0.2), transparent)',
-    checkColor: '#48BED7',
+    priceGrad: 'linear-gradient(135deg, #FAC775, #ffd9a0)',
+    priceGlow: 'drop-shadow(0 0 12px rgba(250,199,117,0.3))',
+    topLine: 'linear-gradient(90deg, transparent 0%, rgba(250,199,117,0.5) 50%, transparent 100%)',
+    divider: 'linear-gradient(90deg, rgba(250,199,117,0.2), transparent)',
+    checkColor: '#FAC775',
     cta: 'border border-amber/30 text-amber hover:bg-amber/10 hover:border-amber/60',
   },
   purple: {
     cardBorder: 'border border-purple/20',
     nameText: 'text-purple',
-    priceGrad: 'linear-gradient(135deg, #C057D5, #E07EF0)',
-    priceGlow: 'drop-shadow(0 0 10px rgba(192,87,213,0.3))',
-    topLine: 'linear-gradient(90deg, transparent 0%, rgba(192,87,213,0.5) 50%, transparent 100%)',
-    divider: 'linear-gradient(90deg, rgba(192,87,213,0.15), transparent)',
-    checkColor: '#C057D5',
+    priceGrad: 'linear-gradient(135deg, #AFA9EC, #cec9f5)',
+    priceGlow: 'drop-shadow(0 0 10px rgba(175,169,236,0.3))',
+    topLine: 'linear-gradient(90deg, transparent 0%, rgba(175,169,236,0.5) 50%, transparent 100%)',
+    divider: 'linear-gradient(90deg, rgba(175,169,236,0.15), transparent)',
+    checkColor: '#AFA9EC',
     cta: 'border border-purple/25 text-purple hover:bg-purple/10 hover:border-purple/50',
   },
 }
@@ -109,7 +109,7 @@ function PlanCard({ plan, index, inView }) {
       `}
       style={{
         background: plan.popular
-          ? 'linear-gradient(160deg, rgba(72,190,215,0.08) 0%, rgba(12,18,15,0.95) 60%)'
+          ? 'linear-gradient(160deg, rgba(93,202,165,0.08) 0%, rgba(12,18,15,0.95) 60%)'
           : 'rgba(18, 18, 26, 0.8)',
       }}
     >
@@ -132,7 +132,7 @@ function PlanCard({ plan, index, inView }) {
         <div className="absolute -top-px left-1/2 -translate-x-1/2">
           <div
             className="flex items-center gap-1.5 px-5 py-1.5 rounded-b-xl font-semibold text-xs tracking-wide uppercase"
-            style={{ background: '#48BED7', color: '#0A1424', boxShadow: '0 4px 20px rgba(72,190,215,0.4)' }}
+            style={{ background: '#5DCAA5', color: '#04342C', boxShadow: '0 4px 20px rgba(93,202,165,0.4)' }}
           >
             <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
               <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />

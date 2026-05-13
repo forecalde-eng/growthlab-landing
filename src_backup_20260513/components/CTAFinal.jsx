@@ -10,7 +10,7 @@ export default function CTAFinal({ waLink }) {
       ref={ref}
       className="relative py-28 md:py-36 border-t border-dark-border overflow-hidden"
       style={{
-        background: 'radial-gradient(ellipse 900px 600px at 50% 40%, rgba(192,87,213,0.14) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse 900px 600px at 50% 40%, rgba(175,169,236,0.14) 0%, transparent 70%)',
       }}
     >
       {/* Grid overlay */}
@@ -24,7 +24,7 @@ export default function CTAFinal({ waLink }) {
           height: 520,
           top: '-120px',
           left: '-160px',
-          background: 'radial-gradient(circle, rgba(192,87,213,0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(175,169,236,0.12) 0%, transparent 70%)',
           filter: 'blur(70px)',
         }}
         animate={{ x: [0, 24, -12, 0], y: [0, -18, 14, 0] }}
@@ -39,7 +39,7 @@ export default function CTAFinal({ waLink }) {
           height: 440,
           bottom: '-100px',
           right: '-120px',
-          background: 'radial-gradient(circle, rgba(72,190,215,0.10) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(93,202,165,0.10) 0%, transparent 70%)',
           filter: 'blur(80px)',
         }}
         animate={{ x: [0, -20, 16, 0], y: [0, 20, -10, 0] }}
@@ -54,7 +54,7 @@ export default function CTAFinal({ waLink }) {
           height: 300,
           top: '30%',
           left: '60%',
-          background: 'radial-gradient(circle, rgba(72,190,215,0.07) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(250,199,117,0.07) 0%, transparent 70%)',
           filter: 'blur(60px)',
         }}
         animate={{ x: [0, 30, -15, 0], y: [0, -25, 20, 0] }}
@@ -64,7 +64,7 @@ export default function CTAFinal({ waLink }) {
       {/* Horizontal glow line — top */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px pointer-events-none"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(192,87,213,0.35), rgba(72,190,215,0.2), transparent)' }}
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(175,169,236,0.35), rgba(93,202,165,0.2), transparent)' }}
       />
 
       {/* Content */}
@@ -93,11 +93,11 @@ export default function CTAFinal({ waLink }) {
           <span
             className="block mt-1"
             style={{
-              background: 'linear-gradient(135deg, #C057D5 0%, #48BED7 60%, #48BED7 100%)',
+              background: 'linear-gradient(135deg, #AFA9EC 0%, #5DCAA5 60%, #FAC775 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-              filter: 'drop-shadow(0 0 30px rgba(192,87,213,0.3))',
+              filter: 'drop-shadow(0 0 30px rgba(175,169,236,0.3))',
             }}
           >
             con IA?
@@ -127,9 +127,9 @@ export default function CTAFinal({ waLink }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 font-semibold text-lg px-10 py-4 rounded-full transition-all duration-300 hover:scale-[1.03]"
             style={{
-              background: 'linear-gradient(135deg, #48BED7, #3aa8c4)',
-              color: '#0A1424',
-              boxShadow: '0 0 28px rgba(72,190,215,0.4), 0 0 70px rgba(72,190,215,0.15)',
+              background: 'linear-gradient(135deg, #5DCAA5, #4ab896)',
+              color: '#04342C',
+              boxShadow: '0 0 28px rgba(93,202,165,0.4), 0 0 70px rgba(93,202,165,0.15)',
               animation: 'pulse-glow 3s ease-in-out infinite',
             }}
           >

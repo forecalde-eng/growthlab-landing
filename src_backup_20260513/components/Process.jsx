@@ -76,20 +76,20 @@ export default function Process() {
             <svg width="100%" height="2" className="overflow-visible">
               <line
                 x1="0" y1="1" x2="100%" y2="1"
-                stroke="rgba(72,190,215,0.25)"
+                stroke="rgba(250,199,117,0.25)"
                 strokeWidth="1.5"
                 strokeDasharray="6 5"
               />
               {/* Arrow right */}
               <polygon
                 points="100%,1 calc(100% - 8px),-3 calc(100% - 8px),5"
-                fill="rgba(72,190,215,0.35)"
+                fill="rgba(250,199,117,0.35)"
               />
             </svg>
             {/* Animated travel dot */}
             <motion.div
               className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-amber"
-              style={{ left: 0, boxShadow: '0 0 8px rgba(72,190,215,0.8)' }}
+              style={{ left: 0, boxShadow: '0 0 8px rgba(250,199,117,0.8)' }}
               animate={{ left: ['0%', '100%'] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'linear', repeatDelay: 1 }}
             />
@@ -120,13 +120,13 @@ export default function Process() {
                 className="relative z-10 w-[4.5rem] h-[4.5rem] rounded-2xl bg-amber-glow border border-amber/25 flex items-center justify-center mx-auto mb-5
                            group-hover:border-amber/55 transition-all duration-300"
                 style={{
-                  boxShadow: '0 0 0 0 rgba(72,190,215,0)',
+                  boxShadow: '0 0 0 0 rgba(250,199,117,0)',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.boxShadow = '0 0 20px rgba(72,190,215,0.3), 0 0 50px rgba(72,190,215,0.1)'
+                  e.currentTarget.style.boxShadow = '0 0 20px rgba(250,199,117,0.3), 0 0 50px rgba(250,199,117,0.1)'
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.boxShadow = '0 0 0 0 rgba(72,190,215,0)'
+                  e.currentTarget.style.boxShadow = '0 0 0 0 rgba(250,199,117,0)'
                 }}
               >
                 <span className="text-amber">{s.icon}</span>

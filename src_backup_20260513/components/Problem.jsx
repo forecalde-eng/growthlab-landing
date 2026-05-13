@@ -57,7 +57,7 @@ function StatCard({ p, index, inView }) {
                  hover:border-coral/40 transition-all duration-400 cursor-default"
       style={{ transition: 'border-color 0.4s ease, box-shadow 0.4s ease' }}
       onMouseEnter={e => {
-        e.currentTarget.style.boxShadow = '0 0 32px rgba(192,87,213,0.18), 0 0 80px rgba(192,87,213,0.07), inset 0 0 0 1px rgba(192,87,213,0.15)'
+        e.currentTarget.style.boxShadow = '0 0 32px rgba(240,149,149,0.18), 0 0 80px rgba(240,149,149,0.07), inset 0 0 0 1px rgba(240,149,149,0.15)'
       }}
       onMouseLeave={e => {
         e.currentTarget.style.boxShadow = 'none'
@@ -75,7 +75,7 @@ function StatCard({ p, index, inView }) {
       {/* Top accent line */}
       <div
         className="absolute top-0 left-6 right-6 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(192,87,213,0.5), transparent)' }}
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(240,149,149,0.5), transparent)' }}
       />
 
       {/* Stat */}
@@ -84,11 +84,11 @@ function StatCard({ p, index, inView }) {
           className="font-heading font-black leading-none tabular-nums"
           style={{
             fontSize: 'clamp(3rem, 5vw, 4rem)',
-            background: 'linear-gradient(135deg, #C057D5, #f5b8b8)',
+            background: 'linear-gradient(135deg, #F09595, #f5b8b8)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
-            filter: 'drop-shadow(0 0 12px rgba(192,87,213,0.4))',
+            filter: 'drop-shadow(0 0 12px rgba(240,149,149,0.4))',
           }}
         >
           {count}{p.suffix}
@@ -132,7 +132,7 @@ export default function Problem() {
             Tu negocio pierde dinero{' '}
             <span
               style={{
-                background: 'linear-gradient(135deg, #C057D5, #f5b8b8)',
+                background: 'linear-gradient(135deg, #F09595, #f5b8b8)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',

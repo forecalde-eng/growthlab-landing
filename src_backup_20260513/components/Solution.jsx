@@ -71,19 +71,19 @@ const pillarStyles = {
     card: 'bg-teal-glow border-teal/20 hover:border-teal/40',
     iconWrap: 'bg-teal/15 border-teal/25 text-teal hover:glow-teal-sm',
     iconColor: 'text-teal/60 group-hover/item:text-teal',
-    topLine: 'linear-gradient(90deg, transparent 0%, rgba(72,190,215,0.7) 50%, transparent 100%)',
-    divider: 'linear-gradient(90deg, rgba(72,190,215,0.25), transparent)',
-    titleGrad: 'linear-gradient(135deg, #48BED7, #7AD4E8)',
-    iconGlow: '0 0 16px rgba(72,190,215,0.15)',
+    topLine: 'linear-gradient(90deg, transparent 0%, rgba(93,202,165,0.7) 50%, transparent 100%)',
+    divider: 'linear-gradient(90deg, rgba(93,202,165,0.25), transparent)',
+    titleGrad: 'linear-gradient(135deg, #5DCAA5, #8BDDC0)',
+    iconGlow: '0 0 16px rgba(93,202,165,0.15)',
   },
   purple: {
     card: 'bg-purple-glow border-purple/15 hover:border-purple/30',
     iconWrap: 'bg-purple/15 border-purple/25 text-purple hover:glow-purple-sm',
     iconColor: 'text-purple/60 group-hover/item:text-purple',
-    topLine: 'linear-gradient(90deg, transparent 0%, rgba(192,87,213,0.5) 50%, transparent 100%)',
-    divider: 'linear-gradient(90deg, rgba(192,87,213,0.2), transparent)',
-    titleGrad: 'linear-gradient(135deg, #C057D5, #E07EF0)',
-    iconGlow: '0 0 16px rgba(192,87,213,0.15)',
+    topLine: 'linear-gradient(90deg, transparent 0%, rgba(175,169,236,0.5) 50%, transparent 100%)',
+    divider: 'linear-gradient(90deg, rgba(175,169,236,0.2), transparent)',
+    titleGrad: 'linear-gradient(135deg, #AFA9EC, #cec9f5)',
+    iconGlow: '0 0 16px rgba(175,169,236,0.15)',
   },
 }
 
@@ -212,7 +212,7 @@ export default function Solution() {
             <div className="relative flex items-center justify-center">
               <div
                 className="w-9 h-9 rounded-full border border-dark-border bg-dark flex items-center justify-center"
-                style={{ boxShadow: '0 0 20px rgba(72,190,215,0.2), 0 0 40px rgba(192,87,213,0.15)' }}
+                style={{ boxShadow: '0 0 20px rgba(93,202,165,0.2), 0 0 40px rgba(175,169,236,0.15)' }}
               >
                 <svg className="w-4 h-4 text-text-dim" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
@@ -221,7 +221,7 @@ export default function Solution() {
               {/* Glow rings */}
               <div
                 className="absolute w-16 h-16 rounded-full animate-ping"
-                style={{ background: 'radial-gradient(circle, rgba(72,190,215,0.08), transparent)', animationDuration: '3s' }}
+                style={{ background: 'radial-gradient(circle, rgba(93,202,165,0.08), transparent)', animationDuration: '3s' }}
               />
             </div>
             {/* Line bottom */}
@@ -263,7 +263,7 @@ export default function Solution() {
         >
           <div
             className="inline-flex items-center gap-3 md:gap-5 bg-white/[0.03] border border-dark-border rounded-2xl px-7 py-4"
-            style={{ boxShadow: '0 0 40px rgba(72,190,215,0.05)' }}
+            style={{ boxShadow: '0 0 40px rgba(93,202,165,0.05)' }}
           >
             <div className="flex flex-col items-center">
               <div className="w-8 h-8 rounded-lg bg-purple/15 border border-purple/20 flex items-center justify-center mb-1">
@@ -290,7 +290,7 @@ export default function Solution() {
             <div className="flex flex-col items-center">
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center mb-1"
-                style={{ background: 'linear-gradient(135deg, rgba(72,190,215,0.2), rgba(192,87,213,0.2))', border: '1px solid rgba(72,190,215,0.25)' }}
+                style={{ background: 'linear-gradient(135deg, rgba(93,202,165,0.2), rgba(175,169,236,0.2))', border: '1px solid rgba(93,202,165,0.25)' }}
               >
                 <svg className="w-4 h-4 text-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />

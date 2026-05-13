@@ -23,7 +23,7 @@ export default function Navbar({ waLink }) {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
         background: scrolled
-          ? 'rgba(15, 20, 35, 0.85)'
+          ? 'rgba(10, 10, 15, 0.85)'
           : 'transparent',
         borderBottom: scrolled
           ? '1px solid rgba(255,255,255,0.06)'
@@ -31,7 +31,7 @@ export default function Navbar({ waLink }) {
         backdropFilter: scrolled ? 'blur(20px) saturate(160%)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(20px) saturate(160%)' : 'none',
         boxShadow: scrolled
-          ? '0 1px 40px rgba(0,0,0,0.4), 0 1px 0 rgba(72,190,215,0.04)'
+          ? '0 1px 40px rgba(0,0,0,0.4), 0 1px 0 rgba(93,202,165,0.04)'
           : 'none',
       }}
     >
@@ -41,7 +41,7 @@ export default function Navbar({ waLink }) {
         <a href="#" className="font-heading text-xl font-bold tracking-tight flex items-center gap-0.5">
           <span
             style={{
-              background: 'linear-gradient(135deg, #48BED7, #7AD4E8)',
+              background: 'linear-gradient(135deg, #5DCAA5, #8BDDC0)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -73,7 +73,7 @@ export default function Navbar({ waLink }) {
               {/* Underline on hover */}
               <span
                 className="absolute -bottom-0.5 left-0 right-0 h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
-                style={{ background: 'linear-gradient(90deg, #48BED7, transparent)' }}
+                style={{ background: 'linear-gradient(90deg, #5DCAA5, transparent)' }}
               />
             </a>
           ))}
@@ -87,11 +87,11 @@ export default function Navbar({ waLink }) {
           className="hidden md:inline-flex items-center gap-2 text-sm font-semibold px-5 py-2 rounded-full transition-all duration-300 hover:scale-[1.04]"
           style={{
             background: scrolled
-              ? 'linear-gradient(135deg, #48BED7, #3aa8c4)'
-              : 'rgba(72,190,215,0.15)',
-            color: scrolled ? '#0A1424' : '#48BED7',
-            border: scrolled ? 'none' : '1px solid rgba(72,190,215,0.3)',
-            boxShadow: scrolled ? '0 0 16px rgba(72,190,215,0.25)' : 'none',
+              ? 'linear-gradient(135deg, #5DCAA5, #4ab896)'
+              : 'rgba(93,202,165,0.15)',
+            color: scrolled ? '#04342C' : '#5DCAA5',
+            border: scrolled ? 'none' : '1px solid rgba(93,202,165,0.3)',
+            boxShadow: scrolled ? '0 0 16px rgba(93,202,165,0.25)' : 'none',
           }}
         >
           <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
@@ -141,7 +141,7 @@ export default function Navbar({ waLink }) {
             transition={{ duration: 0.25, ease: 'easeInOut' }}
             className="md:hidden overflow-hidden"
             style={{
-              background: 'rgba(15, 20, 35, 0.96)',
+              background: 'rgba(10, 10, 15, 0.96)',
               borderTop: '1px solid rgba(255,255,255,0.06)',
               backdropFilter: 'blur(24px)',
             }}
@@ -159,7 +159,7 @@ export default function Navbar({ waLink }) {
                   style={{ color: 'rgba(255,255,255,0.55)' }}
                   onMouseEnter={e => {
                     e.currentTarget.style.color = 'rgba(255,255,255,0.9)'
-                    e.currentTarget.style.background = 'rgba(72,190,215,0.06)'
+                    e.currentTarget.style.background = 'rgba(93,202,165,0.06)'
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.color = 'rgba(255,255,255,0.55)'
@@ -179,9 +179,9 @@ export default function Navbar({ waLink }) {
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center gap-2 text-sm font-semibold px-5 py-3 rounded-full mt-1 transition-all duration-200"
                 style={{
-                  background: 'linear-gradient(135deg, #48BED7, #3aa8c4)',
-                  color: '#0A1424',
-                  boxShadow: '0 0 20px rgba(72,190,215,0.25)',
+                  background: 'linear-gradient(135deg, #5DCAA5, #4ab896)',
+                  color: '#04342C',
+                  boxShadow: '0 0 20px rgba(93,202,165,0.25)',
                 }}
               >
                 <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">

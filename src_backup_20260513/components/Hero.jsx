@@ -45,15 +45,15 @@ export default function Hero({ waLink }) {
       {/* ── Atmospheric orbs ── */}
       <div
         className="pointer-events-none absolute -top-32 -left-40 w-[600px] h-[600px] rounded-full opacity-[0.07] animate-orb-drift"
-        style={{ background: 'radial-gradient(circle, #48BED7 0%, transparent 70%)', filter: 'blur(80px)', animationDelay: '0s' }}
+        style={{ background: 'radial-gradient(circle, #5DCAA5 0%, transparent 70%)', filter: 'blur(80px)', animationDelay: '0s' }}
       />
       <div
         className="pointer-events-none absolute top-1/4 -right-48 w-[500px] h-[500px] rounded-full opacity-[0.06] animate-orb-drift"
-        style={{ background: 'radial-gradient(circle, #C057D5 0%, transparent 70%)', filter: 'blur(90px)', animationDelay: '-4s' }}
+        style={{ background: 'radial-gradient(circle, #AFA9EC 0%, transparent 70%)', filter: 'blur(90px)', animationDelay: '-4s' }}
       />
       <div
         className="pointer-events-none absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full opacity-[0.05] animate-orb-drift"
-        style={{ background: 'radial-gradient(circle, #48BED7 0%, transparent 70%)', filter: 'blur(100px)', animationDelay: '-8s' }}
+        style={{ background: 'radial-gradient(circle, #FAC775 0%, transparent 70%)', filter: 'blur(100px)', animationDelay: '-8s' }}
       />
 
       <div className="section-wrap w-full">
@@ -134,12 +134,12 @@ export default function Hero({ waLink }) {
         >
           <div
             className="bg-dark-card border border-dark-border rounded-2xl p-5 relative"
-            style={{ boxShadow: '0 0 0 1px rgba(72,190,215,0.08), 0 32px 64px rgba(0,0,0,0.5)' }}
+            style={{ boxShadow: '0 0 0 1px rgba(93,202,165,0.08), 0 32px 64px rgba(0,0,0,0.5)' }}
           >
             {/* Top corner glow */}
             <div
               className="absolute -top-px left-8 right-8 h-px"
-              style={{ background: 'linear-gradient(90deg, transparent, rgba(72,190,215,0.4), transparent)' }}
+              style={{ background: 'linear-gradient(90deg, transparent, rgba(93,202,165,0.4), transparent)' }}
             />
 
             {/* Header */}
