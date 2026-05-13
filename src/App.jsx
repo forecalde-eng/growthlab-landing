@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import LeadForm from "./components/LeadForm";
+import PricingSection from "./components/ui/PricingSection";
 
 const WA_LINK = "https://wa.me/593963820234?text=Hola%21%20Me%20interesa%20automatizar%20mi%20negocio%20con%20IA%20%F0%9F%A4%96";
 
@@ -371,44 +372,7 @@ export default function App() {
       </section>
 
       {/* PRICING */}
-      <section id="pricing" style={{ padding: "72px 24px", borderTop: `1px solid ${brd}` }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.4 }} style={{ textAlign: "center", marginBottom: 48 }}>
-            <p style={{ fontSize: 11, letterSpacing: "0.2em", color: amber, fontWeight: 500, marginBottom: 12, textTransform: "uppercase" }}>Pricing</p>
-            <h2 style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 600, marginBottom: 10 }}>Planes que se pagan solos</h2>
-            <p style={{ color: muted, maxWidth: 460, margin: "0 auto" }}>Sin contratos de permanencia. Elige el que mejor se adapte.</p>
-          </motion.div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16, alignItems: "start" }}>
-            {plans.map((pl, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.35, delay: i * 0.1 }}
-                style={{ position: "relative", borderRadius: 16, padding: 24, background: pl.popular ? "rgba(72,190,215,0.06)" : "rgba(255,255,255,0.02)", border: pl.popular ? `2px solid rgba(72,190,215,0.3)` : `1px solid ${brd}` }}>
-                {pl.popular && <div style={{ position: "absolute", top: -11, right: 18, background: teal, color: tealDark, fontSize: 11, fontWeight: 600, padding: "3px 12px", borderRadius: 12 }}>Popular</div>}
-                <h3 style={{ fontFamily: "Montserrat", fontSize: 20, fontWeight: 500, marginBottom: 4 }}>{pl.name}</h3>
-                <p style={{ fontSize: 13, color: dim, marginBottom: 12 }}>{pl.desc}</p>
-                <p style={{ fontSize: 12, color: amber, marginBottom: 8 }}>Setup: {pl.setup}</p>
-                <div style={{ marginBottom: 22 }}>
-                  <span style={{ fontFamily: "Montserrat", fontSize: 36, fontWeight: 700, color: pl.popular ? teal : amber }}>{pl.price}</span>
-                  <span style={{ fontSize: 13, color: dim }}>{pl.period}</span>
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 24 }}>
-                  {pl.features.map((f, j) => (
-                    <div key={j} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-                      <span style={{ color: pl.popular ? teal : dim, marginTop: 2, flexShrink: 0 }}>✓</span>
-                      <span style={{ fontSize: 13, color: muted }}>{f}</span>
-                    </div>
-                  ))}
-                </div>
-                <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
-                  style={{ display: "block", textAlign: "center", fontSize: 14, fontWeight: 600, padding: "11px 0", borderRadius: 24, textDecoration: "none",
-                    ...(pl.popular ? { background: teal, color: tealDark } : { border: `1px solid ${brd}`, color: muted }) }}>
-                  {pl.price === "Custom" ? "Contactar" : "Empezar ahora"}
-                </a>
-              </motion.div>
-            ))}
-          </div>
-          <p style={{ textAlign: "center", marginTop: 24, fontSize: 13, color: dim }}>👤 VA (Asistente Virtual) disponible desde <span style={{ color: amber }}>$200/mes adicionales</span> en cualquier plan</p>
-        </div>
-      </section>
+      <PricingSection />
 
       {/* FAQ */}
       <section id="faq" style={{ padding: "72px 24px", borderTop: `1px solid ${brd}` }}>

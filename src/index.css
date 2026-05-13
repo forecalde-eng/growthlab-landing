@@ -233,3 +233,89 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 
 /* TextScramble dud character */
 .dud { color: rgba(72, 190, 215, 0.45); }
+
+/* ─── Pricing Section ───────────────────────────────────── */
+@property --pricing-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes pricing-border-spin {
+  to { --pricing-angle: 360deg; }
+}
+
+.pricing-pro-card {
+  background:
+    linear-gradient(rgba(15,20,35,0.97), rgba(22,10,34,0.97)) padding-box,
+    conic-gradient(from var(--pricing-angle), #C057D5 0%, #7B5CF0 28%, #48BED7 58%, #C057D5 100%) border-box;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  animation: pricing-border-spin 5s linear infinite;
+}
+
+.pricing-cta {
+  display: block;
+  text-align: center;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  padding: 11px 0;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
+}
+
+.pricing-cta-teal {
+  border: 1px solid rgba(72, 190, 215, 0.4);
+  color: #48BED7;
+  background: transparent;
+}
+.pricing-cta-teal:hover {
+  background: rgba(72, 190, 215, 0.1);
+  border-color: rgba(72, 190, 215, 0.75);
+  box-shadow: 0 0 18px rgba(72, 190, 215, 0.2);
+}
+
+.pricing-cta-solid {
+  background: linear-gradient(135deg, #C057D5, #9B44B3);
+  color: #fff;
+  border: 1px solid rgba(192, 87, 213, 0.3);
+  box-shadow: 0 0 22px rgba(192, 87, 213, 0.4), 0 4px 16px rgba(0,0,0,0.3);
+}
+.pricing-cta-solid:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+  box-shadow: 0 0 36px rgba(192, 87, 213, 0.55), 0 6px 24px rgba(0,0,0,0.4);
+}
+
+.pricing-cta-purple {
+  border: 1px solid rgba(192, 87, 213, 0.4);
+  color: #C057D5;
+  background: transparent;
+}
+.pricing-cta-purple:hover {
+  background: rgba(192, 87, 213, 0.1);
+  border-color: rgba(192, 87, 213, 0.75);
+  box-shadow: 0 0 18px rgba(192, 87, 213, 0.2);
+}
+
+.pricing-cta-solid-teal {
+  background: linear-gradient(135deg, #48BED7, #2AAFC8);
+  color: #0A1424;
+  border: 1px solid rgba(72, 190, 215, 0.3);
+  box-shadow: 0 0 22px rgba(72, 190, 215, 0.4), 0 4px 16px rgba(0,0,0,0.3);
+}
+.pricing-cta-solid-teal:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 0 36px rgba(72, 190, 215, 0.55), 0 6px 24px rgba(0,0,0,0.4);
+}
+
+/* Force 2-column grid on desktop */
+@media (min-width: 720px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
