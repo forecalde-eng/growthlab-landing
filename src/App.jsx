@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import LeadForm from "./components/LeadForm";
 
 const WA_LINK = "https://wa.me/593963820234?text=Hola%21%20Me%20interesa%20automatizar%20mi%20negocio%20con%20IA%20%F0%9F%A4%96";
 
@@ -291,6 +292,8 @@ export default function App() {
         </div>
       </section>
 
+      <LeadForm />
+
       {/* PROBLEM */}
       <section id="servicios" ref={probRef} style={{ padding: "80px 24px", borderTop: `1px solid ${brd}` }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -431,6 +434,16 @@ export default function App() {
           <p style={{ marginTop: 18, fontSize: 12, color: dim }}>Respondemos en menos de 5 minutos</p>
         </motion.div>
       </section>
+
+      {/* FLOATING CTA */}
+      <a
+        href="https://wa.me/593963820234?text=Hola!%20Me%20interesa%20una%20demo%20de%20GrowthLab%20AI%20🤖"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ position: "fixed", bottom: 24, right: 24, zIndex: 9999, background: "#48BED7", color: "#000", fontFamily: "Montserrat, sans-serif", fontWeight: 600, fontSize: 14, padding: "12px 20px", borderRadius: 50, textDecoration: "none", boxShadow: "0 4px 20px rgba(72,190,215,0.35)", whiteSpace: "nowrap" }}
+      >
+        📅 Agendar demo
+      </a>
 
       {/* FOOTER */}
       <footer style={{ borderTop: `1px solid ${brd}`, padding: "32px 24px" }}>
