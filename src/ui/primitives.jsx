@@ -74,10 +74,10 @@ export function IconBadge({ name, tone = "cy" }) {
   );
 }
 
-export function Marquee({ children }) {
+export function Marquee({ children, rev = false }) {
   return (
     <div className="marquee-wrap">
-      <div className="marquee">
+      <div className={`marquee ${rev ? "marquee-rev" : ""}`}>
         <div className="flex shrink-0 items-center gap-4 pr-4">{children}</div>
         <div className="flex shrink-0 items-center gap-4 pr-4" aria-hidden="true">{children}</div>
       </div>
@@ -107,5 +107,16 @@ export function Wordmark({ size = 20 }) {
         GrowthLab <span className="grad-text">AI</span>
       </span>
     </span>
+  );
+}
+
+export function Meteors({ n = 6 }) {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      {Array.from({ length: n }).map((_, i) => (
+        <span key={i} className={`meteor ${i % 2 ? "p" : ""}`}
+          style={{ left: `${(i * 97) % 100}%`, animationDelay: `${(i * 1.3) % 6}s`, animationDuration: `${4 + (i % 3)}s` }} />
+      ))}
+    </div>
   );
 }

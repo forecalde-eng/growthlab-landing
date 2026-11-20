@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon, WaIcon } from "../ui/icons";
-import { Reveal, SectionHead, Button, Wordmark, waLink } from "../ui/primitives";
+import { Reveal, SectionHead, Button, Wordmark, Meteors, waLink } from "../ui/primitives";
 import LeadForm from "../components/LeadForm";
 
 const faqs = [
@@ -51,7 +51,8 @@ export function CTA() {
       <div className="halo bottom-0 right-1/4 w-[380px] h-[380px] bg-pu/10" style={{ animationDelay: "-7s" }} />
       <div className="relative mx-auto max-w-4xl px-5">
         <Reveal>
-          <div className="beam rounded-[2rem] bg-surface px-6 py-14 sm:px-14 text-center">
+          <div className="beam relative overflow-hidden rounded-[2rem] bg-surface px-6 py-14 sm:px-14 text-center">
+            <Meteors n={8} />
             <h2 className="font-heading font-extrabold text-[clamp(2rem,6.5vw,3.75rem)]">Que ningún cliente <span className="grad-anim">se quede sin respuesta.</span></h2>
             <p className="mt-5 text-tx2 text-lg max-w-xl mx-auto">Escríbenos por WhatsApp o agenda una llamada con nuestro asesor.</p>
             <div className="mt-9 flex flex-col sm:flex-row gap-3.5 justify-center">
