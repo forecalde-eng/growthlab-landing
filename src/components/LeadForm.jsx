@@ -18,10 +18,10 @@ const inputStyle = {
   border: `1px solid ${brd}`,
   borderRadius: 10,
   padding: "13px 16px",
-  fontSize: 14,
+  fontSize: 16,
   color: txt,
   outline: "none",
-  fontFamily: "Inter, sans-serif",
+  fontFamily: "Manrope, sans-serif",
   boxSizing: "border-box",
 };
 
@@ -63,27 +63,27 @@ export default function LeadForm() {
   }
 
   return (
-    <section style={{ padding: "80px 24px", borderTop: `1px solid ${brd}`, background: `radial-gradient(ellipse 700px 500px at 50% 50%, rgba(72,190,215,0.05), transparent)` }}>
+    <section style={{ padding: "80px 20px", background: "#050814" }}>
       <div style={{ maxWidth: 560, margin: "0 auto" }}>
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <p style={{ fontSize: 11, letterSpacing: "0.2em", color: teal, fontWeight: 500, marginBottom: 12, textTransform: "uppercase" }}>
             Empezar ahora
           </p>
-          <h2 style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 700, color: txt, marginBottom: 12, lineHeight: 1.2 }}>
-            ¿Listo para automatizar tus ventas?
+          <h2 style={{ fontFamily: "Outfit, sans-serif", fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 700, color: txt, marginBottom: 12, lineHeight: 1.2 }}>
+            Déjanos tus datos
           </h2>
           <p style={{ fontSize: 15, color: muted, lineHeight: 1.6 }}>
-            Déjanos tus datos y te contactamos en menos de 24h
+            Te escribimos por WhatsApp para contarte cómo funciona el sistema.
           </p>
         </div>
 
         {/* Card */}
-        <div style={{ background: card, border: `1px solid ${brd}`, borderRadius: 18, padding: "36px 32px", borderTop: `2px solid ${teal}` }}>
+        <div style={{ background: card, border: `1px solid ${brd}`, borderRadius: 18, padding: "32px 22px", borderTop: `2px solid ${teal}` }}>
           {success ? (
             <div style={{ textAlign: "center", padding: "24px 0" }}>
               <div style={{ fontSize: 48, marginBottom: 16 }}>🚀</div>
-              <h3 style={{ fontFamily: "Montserrat, sans-serif", fontSize: 22, fontWeight: 600, color: teal, marginBottom: 10 }}>
+              <h3 style={{ fontFamily: "Outfit, sans-serif", fontSize: 22, fontWeight: 600, color: teal, marginBottom: 10 }}>
                 ¡Listo! Te contactamos pronto
               </h3>
               <p style={{ color: muted, fontSize: 14, lineHeight: 1.6 }}>
@@ -143,9 +143,9 @@ export default function LeadForm() {
                 type="submit"
                 disabled={loading}
                 style={{
-                  background: loading ? "rgba(72,190,215,0.5)" : teal,
+                  background: loading ? "rgba(72,190,215,0.5)" : teal, minHeight: 52,
                   color: tealDark,
-                  fontFamily: "Montserrat, sans-serif",
+                  fontFamily: "Outfit, sans-serif",
                   fontSize: 15,
                   fontWeight: 700,
                   padding: "14px 28px",
@@ -156,11 +156,11 @@ export default function LeadForm() {
                   letterSpacing: "0.01em",
                 }}
               >
-                {loading ? "Enviando..." : "Quiero mi demo gratis →"}
+                {loading ? "Enviando..." : "Quiero que me contacten →"}
               </button>
 
               <p style={{ textAlign: "center", fontSize: 12, color: dim }}>
-                Sin spam. Sin compromiso. Solo resultados.
+                Sin spam. Sin compromiso.
               </p>
             </form>
           )}
