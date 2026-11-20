@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const WA_NUMBER = "593963820234";
+const DRAFT_KEY = "gl_lead_draft";
 
 const WEBHOOK_URL = "https://n8n.dreamcode.space/webhook/leads-growthlab";
 
@@ -34,7 +37,15 @@ const labelStyle = {
 };
 
 export default function LeadForm() {
-  const [form, setForm] = useState({ nombre: "", whatsapp: "", email: "" });
+  const [form, setForm] = useState({ nombre: "", whatsapp: "", email: "", mensaje: "" });
+
+  // Recupera / guarda borrador para que no se pierda lo escrito
+  useEffect(() => {
+    try { const d = JSON.parse(localStorage.getItem(DRAFT_KEY) || "null"); if (d) setForm(f => ({ ...f, ...d })); } catch {}
+  }, []);
+  useEffect(() => {
+    try { localStorage.setItem(DRAFT_KEY, JSON.stringify(form)); } catch {}
+  }, [form]);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -47,19 +58,29 @@ export default function LeadForm() {
     e.preventDefault();
     setLoading(true);
     setError("");
+    const texto =
+      `Hola! Soy ${form.nombre}.\n` +
+      (form.mensaje ? `Me interesa: ${form.mensaje}\n` : "") +
+      `Mi WhatsApp: ${form.whatsapp}` +
+      (form.email ? `\nEmail: ${form.email}` : "");
+    const wa = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(texto)}`;
+    // 1) Guardar el lead (si falla, igual seguimos a WhatsApp)
     try {
-      const res = await fetch(WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, fuente: "landing_page" }),
-      });
-      if (!res.ok) throw new Error("Error del servidor");
-      setSuccess(true);
-    } catch (err) {
-      setError("Algo salió mal. Intenta de nuevo o escríbenos por WhatsApp.");
-    } finally {
-      setLoading(false);
-    }
+      await Promise.race([
+        fetch(WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...form, fuente: "landing_page" }),
+          keepalive: true,
+        }),
+        new Promise(r => setTimeout(r, 2000)),
+      ]);
+    } catch {}
+    // 2) Ir a WhatsApp con el mensaje armado
+    try { localStorage.removeItem(DRAFT_KEY); } catch {}
+    setSuccess(true);
+    setLoading(false);
+    window.location.href = wa;
   }
 
   return (
@@ -74,7 +95,7 @@ export default function LeadForm() {
             Déjanos tus datos
           </h2>
           <p style={{ fontSize: 15, color: muted, lineHeight: 1.6 }}>
-            Te escribimos por WhatsApp para contarte cómo funciona el sistema.
+            Llena el formulario y te llevamos directo a WhatsApp con tu mensaje listo.
           </p>
         </div>
 
@@ -84,10 +105,10 @@ export default function LeadForm() {
             <div style={{ textAlign: "center", padding: "24px 0" }}>
               <div style={{ fontSize: 48, marginBottom: 16 }}>🚀</div>
               <h3 style={{ fontFamily: "Outfit, sans-serif", fontSize: 22, fontWeight: 600, color: teal, marginBottom: 10 }}>
-                ¡Listo! Te contactamos pronto
+                ¡Listo! Abriendo WhatsApp…
               </h3>
               <p style={{ color: muted, fontSize: 14, lineHeight: 1.6 }}>
-                Revisaremos tu información y te escribiremos en menos de 24 horas.
+                Si no se abre automáticamente, escríbenos desde el botón de WhatsApp.
               </p>
             </div>
           ) : (
@@ -133,6 +154,19 @@ export default function LeadForm() {
                 />
               </div>
 
+              <div>
+                <label style={labelStyle} htmlFor="mensaje">¿Qué necesitas? <span style={{ color: dim }}>(opcional)</span></label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows={3}
+                  placeholder="Ej: agente de IA para mi clínica, página web, marketing…"
+                  value={form.mensaje}
+                  onChange={handleChange}
+                  style={{ ...inputStyle, resize: "vertical", minHeight: 90 }}
+                />
+              </div>
+
               {error && (
                 <p style={{ fontSize: 13, color: "#FF6B6B", background: "rgba(255,107,107,0.08)", border: "1px solid rgba(255,107,107,0.2)", borderRadius: 8, padding: "10px 14px", lineHeight: 1.5 }}>
                   {error}
@@ -156,7 +190,7 @@ export default function LeadForm() {
                   letterSpacing: "0.01em",
                 }}
               >
-                {loading ? "Enviando..." : "Quiero que me contacten →"}
+                {loading ? "Abriendo WhatsApp..." : "Enviar y abrir WhatsApp →"}
               </button>
 
               <p style={{ textAlign: "center", fontSize: 12, color: dim }}>
