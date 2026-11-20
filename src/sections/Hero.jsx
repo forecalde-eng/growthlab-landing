@@ -27,7 +27,7 @@ export function Navbar() {
           <a href="#inicio" aria-label="GrowthLab AI"><Wordmark size={19} /></a>
           <div className="hidden md:flex items-center gap-8">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className="text-sm font-semibold text-tx2 hover:text-cy transition-colors">{l.label}</a>
+              <a key={l.href} href={l.href} className="text-sm font-semibold text-tx2 hover:text-cy transition-colors py-3">{l.label}</a>
             ))}
             <Button href={waLink("Hola! Quiero agendar una llamada con un asesor")} variant="cyan" className="!min-h-[42px] !px-5 !text-sm !rounded-xl">Agendar llamada</Button>
           </div>
