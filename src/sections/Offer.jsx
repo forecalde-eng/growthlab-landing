@@ -361,11 +361,11 @@ export function Showcase() {
 /* ─── Videos (presentación propia + TikTok), carga diferida ── */
 const TIKTOK_ID = "7710071056249261333";
 const TIKTOK_PROFILE = "https://www.tiktok.com/@growthlab_ai";
-const videos = [["local", "Presentación"], ["tiktok", "TikTok"]];
+const videos = [["tiktok", "TikTok"], ["local", "Agente en acción"]];
 
 export function VideoSection() {
   const [play, setPlay] = useState(false);
-  const [which, setWhich] = useState("local");
+  const [which, setWhich] = useState("tiktok");
   const choose = (k) => { setWhich(k); setPlay(false); };
   return (
     <section id="video" className="relative py-20 md:py-28 overflow-hidden">
