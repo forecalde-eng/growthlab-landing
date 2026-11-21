@@ -350,7 +350,7 @@ export function Process() {
           <motion.div style={{ scaleY: h, transformOrigin: "top" }} className="absolute left-[19px] sm:left-[27px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-cy to-pu" />
           {steps.map((s, i) => (
             <Reveal key={s.t} className="relative pb-12 last:pb-0">
-              <span className="absolute -left-12 sm:-left-16 top-0 w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-surface border border-cy/40 grid place-items-center font-heading font-extrabold text-lg sm:text-xl grad-text">{i + 1}</span>
+              <span className="absolute -left-12 sm:-left-16 top-0 z-10 w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-ink border border-cy/40 ring-8 ring-ink grid place-items-center font-heading font-extrabold text-lg sm:text-xl"><span className="grad-text">{i + 1}</span></span>
               <h3 className="font-heading font-bold text-xl sm:text-2xl mb-2 pt-1.5">{s.t}</h3>
               <p className="text-tx2 leading-relaxed">{s.d}</p>
             </Reveal>

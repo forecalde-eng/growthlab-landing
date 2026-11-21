@@ -28,7 +28,7 @@ export default function Pricing() {
         <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5 items-stretch">
           {plans.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.08} className="h-full">
-              <SpotCard beam={p.featured} className={`p-6 h-full flex flex-col ${p.featured ? "!border-transparent bg-gradient-to-b from-surface to-ink xl:-my-3 xl:pb-9" : ""}`}>
+              <SpotCard beam={p.featured} inner="flex flex-col" className={`p-6 h-full ${p.featured ? "!border-transparent bg-gradient-to-b from-surface to-ink" : ""}`}>
                 <span className={`self-start text-xs font-bold rounded-full px-3 py-1 mb-5 ${p.featured ? "bg-gradient-to-r from-cy to-pu text-surface" : "bg-white/5 text-tx3"}`}>{p.tag}</span>
                 <h3 className="font-heading font-bold text-xl">{p.id}</h3>
                 <p className="mt-3 flex items-baseline gap-1.5"><span className="font-heading font-extrabold text-5xl grad-text">{p.price}</span><span className="text-tx3 font-semibold">/mes</span></p>
@@ -57,7 +57,7 @@ export default function Pricing() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {oneTime.map((o, i) => (
               <Reveal key={o.n} delay={i * 0.08} className="h-full">
-                <SpotCard className="p-6 h-full flex flex-col">
+                <SpotCard inner="flex flex-col" className="p-6 h-full">
                   {o.badge && <span className="self-start text-xs font-bold rounded-full px-3 py-1 mb-3 bg-pu/15 text-pu border border-pu/30">{o.badge}</span>}
                   <h4 className="font-heading font-bold text-lg">{o.n}</h4>
                   <p className="mt-2 mb-3 flex items-baseline gap-2"><span className="font-heading font-extrabold text-3xl grad-text">{o.p}</span>{o.old && <s className="text-tx3 text-sm">{o.old}</s>}</p>

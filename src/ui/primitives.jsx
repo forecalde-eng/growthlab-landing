@@ -48,7 +48,7 @@ export function Button({ href, variant = "cyan", children, className = "", icon,
 }
 
 /* Tarjeta con spotlight (Magic UI) */
-export function SpotCard({ children, className = "", beam = false }) {
+export function SpotCard({ children, className = "", beam = false, inner = "" }) {
   const ref = useRef(null);
   const move = (e) => {
     const r = ref.current.getBoundingClientRect();
@@ -60,7 +60,7 @@ export function SpotCard({ children, className = "", beam = false }) {
     <div ref={ref} onMouseMove={move} onTouchStart={(e) => { move(e); ref.current.classList.add("active"); }}
       onTouchEnd={() => ref.current.classList.remove("active")}
       className={`spot rounded-3xl border border-white/10 bg-surface/80 ${beam ? "beam" : ""} ${className}`}>
-      <div className="relative z-10 h-full">{children}</div>
+      <div className={`relative z-10 h-full ${inner}`}>{children}</div>
     </div>
   );
 }
