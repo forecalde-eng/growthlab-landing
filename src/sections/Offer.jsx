@@ -315,13 +315,16 @@ const TIKTOK_PROFILE = "https://www.tiktok.com/@growthlab_ai";
 export function VideoSection() {
   const [play, setPlay] = useState(false);
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden bg-ink2">
+    <section id="video" className="relative py-20 md:py-28 overflow-hidden">
       <div className="halo top-1/3 left-0 w-[380px] h-[380px] bg-pu/10" />
       <div className="relative mx-auto max-w-6xl px-5 grid lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-left">
-          <SectionHead center={false} eyebrow="En acción" title={<>Míranos <span className="grad-text">trabajar</span></>}
-            sub="Mira un video de GrowthLab AI y síguenos en TikTok para ver más ideas para tu negocio." />
-          <Button href={TIKTOK_PROFILE} variant="ghost" icon="arrow">@growthlab_ai en TikTok</Button>
+          <SectionHead center={false} eyebrow="Presentación" title={<>Así pierden dinero muchas empresas, <span className="grad-text">y cómo lo resolvemos</span></>}
+            sub="Mira por qué un negocio pierde clientes sin darse cuenta y cómo un ecosistema digital (agente de IA, CRM, marketing y datos) pone orden." />
+          <div className="flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start">
+            <Button href={waLink("Hola! Vi la presentación de GrowthLab y quiero saber más")} variant="wa" icon="wa">Hablar con un asesor</Button>
+            <Button href={TIKTOK_PROFILE} variant="ghost" icon="arrow">Más en TikTok</Button>
+          </div>
         </div>
         <Reveal>
           <div className="beam mx-auto w-[min(100%,300px)] rounded-[2.2rem] bg-surface p-2 shadow-[0_30px_80px_-20px_rgba(192,87,213,.35)]">

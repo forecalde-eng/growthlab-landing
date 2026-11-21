@@ -12,12 +12,12 @@ export default function App() {
         <main>
           <Hero />
           <Niches />
+          <VideoSection />
           <Pillars />
           <Contrast />
           <Services />
           <Ecosystem />
           <Showcase />
-          <VideoSection />
           <Process />
           <Pricing />
           <FAQ />
