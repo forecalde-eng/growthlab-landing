@@ -323,10 +323,10 @@ export function Showcase() {
         <Reveal>
           <div className="beam rounded-3xl bg-surface p-4 sm:p-6">
             <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
-              <div className="flex gap-2 overflow-x-auto" role="tablist">
+              <div className="flex gap-1.5 sm:gap-2" role="tablist">
                 {tabs.map((t) => (
                   <button key={t} role="tab" aria-selected={tab === t} onClick={() => setTab(t)}
-                    className={`rounded-full px-5 min-h-[44px] text-sm font-bold transition-colors ${tab === t ? "bg-white text-surface" : "border border-white/10 text-tx2 hover:text-white"}`}>{t}</button>
+                    className={`rounded-full px-4 sm:px-5 min-h-[44px] text-sm font-bold transition-colors ${tab === t ? "bg-white text-surface" : "border border-white/10 text-tx2 hover:text-white"}`}>{t}</button>
                 ))}
               </div>
               <button onClick={() => setOn(!on)} role="switch" aria-checked={on}
@@ -383,7 +383,7 @@ export function VideoSection() {
           <div className="flex justify-center gap-2 mb-5" role="tablist" aria-label="Elegir video">
             {videos.map(([k, l]) => (
               <button key={k} role="tab" aria-selected={which === k} onClick={() => choose(k)}
-                className={`rounded-full px-5 min-h-[44px] text-sm font-bold transition-colors ${which === k ? "bg-white text-surface" : "border border-white/10 text-tx2 hover:text-white"}`}>{l}</button>
+                className={`rounded-full px-4 sm:px-5 min-h-[44px] text-sm font-bold transition-colors ${which === k ? "bg-white text-surface" : "border border-white/10 text-tx2 hover:text-white"}`}>{l}</button>
             ))}
           </div>
           <div className="beam mx-auto w-[min(100%,300px)] rounded-[2.2rem] bg-surface p-2 shadow-[0_30px_80px_-20px_rgba(192,87,213,.35)]">
