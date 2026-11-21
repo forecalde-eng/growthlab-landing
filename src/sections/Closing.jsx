@@ -8,7 +8,7 @@ const faqs = [
   { q: "¿Necesito conocimientos técnicos?", a: "No. Nosotros configuramos el agente, el CRM y las automatizaciones. Tú solo ves los resultados." },
   { q: "¿Me aseguran más ventas?", a: "No prometemos resultados garantizados. Te damos el sistema: atención inmediata, cada contacto registrado y datos claros. Las ventas las cierra tu equipo." },
   { q: "¿Puedo ver las conversaciones del agente?", a: "Sí. Todo queda en tu CRM y puedes intervenir cuando quieras. En el Plan Ecosystem además tienes un botón para prender o apagar el agente." },
-  { q: "¿Cuánto dura el compromiso?", a: "Los planes mensuales tienen un mínimo de 6 meses, con pago mensual por adelantado. Los servicios de pago único no tienen mensualidad ni compromiso." },
+  { q: "¿Cuánto dura el compromiso?", a: "Los planes mensuales tienen un mínimo de 6 meses, con pago mensual por adelantado. Si terminas antes, se paga el 50% del valor restante del compromiso. Los servicios de pago único no tienen mensualidad ni compromiso." },
   { q: "¿La publicidad en Meta está incluida?", a: "La gestión de campañas sí, según tu plan. La inversión en pauta va aparte y se paga directo a Meta." },
   { q: "¿Dónde hacen la producción de contenido?", a: "En tu negocio, en Quito y sus valles. Fuera del Distrito Metropolitano cotizamos la movilización aparte." },
   { q: "¿Trabajan con mi tipo de negocio?", a: "Nuestro foco son clínicas y especialistas de salud, spas y estética, inmobiliarias y veterinarias, pero el sistema sirve para cualquier negocio." },

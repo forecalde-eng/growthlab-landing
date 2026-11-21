@@ -81,7 +81,7 @@ const services = [
     points: ["Atención inmediata a cualquier hora", "Cada contacto queda registrado", "Tú puedes intervenir cuando quieras"] },
   { icon: "users", tone: "pu", tag: "Atención", title: "CRM para tus clientes",
     text: "Todas las conversaciones y contactos en un solo lugar, ordenados y visibles.",
-    points: ["Chatwoot, CRM visual", "CRM propio de GrowthLab: leads y pipeline por etapas", "Botón para prender o apagar el agente"] },
+    points: ["Chatwoot, CRM visual", "CRM propio de GrowthLab: leads y pipeline por etapas", "Cola de rescate: quien vio horarios y no reservó", "Botón para prender o apagar el agente"] },
   { icon: "workflow", tone: "cy", tag: "Atención", title: "Automatizaciones",
     text: "Tareas repetitivas que se hacen solas, para que tu equipo se enfoque en vender.",
     points: ["Seguimiento a clientes", "Avisos y notificaciones", "Conexión con calendario y correo"] },
@@ -248,26 +248,87 @@ export function Ecosystem() {
   );
 }
 
-/* ─── CRM interactivo ──────────────────────────────────── */
+/* ─── CRM interactivo (datos de ejemplo, no reales) ───── */
 const cols = [
   { name: "Nuevo", items: ["Ana · consulta limpieza", "Luis · precio consulta"] },
   { name: "En conversación", items: ["Marta · pide horarios"] },
-  { name: "Cita agendada", items: ["Diego · mañana 10:00", "Sofía · jueves 16:00"] },
-  { name: "Cliente", items: ["Paola · atendida"] },
+  { name: "Vio horarios", items: ["Carlos · sin reservar"] },
+  { name: "Reservada", items: ["Diego · mañana 10:00", "Sofía · jueves 16:00"] },
 ];
+const kpis = [
+  ["Personas por rescatar", "5", "Vieron horarios y no reservaron", "users"],
+  ["Citas de hoy", "3", "Agendadas por el agente", "calendar"],
+  ["Tareas vencidas", "0", "Todo al día", "check"],
+  ["Contactos nuevos", "8", "Registrados hoy en el CRM", "chat"],
+];
+const funnel = [["Nuevo", 8], ["En conversación", 12], ["Vio horarios", 5], ["Reservada", 3], ["Derivada al equipo", 2]];
+const tabs = ["Inicio", "Embudo", "Pipeline"];
+
+function CrmView({ tab }) {
+  if (tab === "Inicio") return (
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      {kpis.map(([t, n, d, ic], i) => (
+        <motion.div key={t} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}
+          className="rounded-2xl bg-ink/70 border border-white/10 p-4 border-t-2 border-t-cy/40">
+          <div className="flex items-start justify-between gap-2"><p className="text-sm text-tx2">{t}</p>
+            <span className="w-8 h-8 rounded-lg bg-cy/10 text-cy grid place-items-center shrink-0"><Icon name={ic} size={16} /></span></div>
+          <p className="font-heading font-extrabold text-4xl grad-text my-2">{n}</p>
+          <p className="text-xs text-tx3">{d}</p>
+        </motion.div>
+      ))}
+    </div>
+  );
+  if (tab === "Embudo") return (
+    <div className="rounded-2xl bg-ink/70 border border-white/10 p-4 sm:p-5">
+      <p className="font-heading font-bold mb-4">Dónde está la gente</p>
+      <div className="space-y-3.5">
+        {funnel.map(([n, v], i) => (
+          <div key={n}>
+            <div className="flex justify-between text-sm mb-1.5"><span className="text-tx2">{n}</span><span className="font-bold">{v}</span></div>
+            <div className="h-2.5 rounded-full bg-white/5 overflow-hidden">
+              <motion.div initial={{ width: 0 }} animate={{ width: `${(v / 12) * 100}%` }} transition={{ duration: 0.8, delay: i * 0.1 }}
+                className="h-full rounded-full bg-gradient-to-r from-cy to-pu" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+  return (
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+      {cols.map((c, ci) => (
+        <div key={c.name} className="rounded-2xl bg-ink/70 border border-white/5 p-3">
+          <p className="text-xs font-bold tracking-wide uppercase text-tx3 mb-3 flex justify-between">{c.name}<span className="text-cy">{c.items.length}</span></p>
+          <div className="space-y-2.5">
+            {c.items.map((it, k) => (
+              <motion.div key={it} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 + ci * 0.1 + k * 0.08 }}
+                className="rounded-xl bg-surface border border-white/10 px-3 py-2.5 text-[13px] text-tx2 leading-snug">{it}</motion.div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export function Showcase() {
   const [on, setOn] = useState(true);
+  const [tab, setTab] = useState("Inicio");
   return (
     <section id="agente" className="relative py-20 md:py-28 overflow-hidden">
       <div className="halo top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[320px] bg-pu/10" />
       <div className="relative mx-auto max-w-6xl px-5">
         <SectionHead eyebrow="Tu agente y tu CRM" title={<>Cada conversación, <span className="grad-text">a la vista</span></>}
-          sub="Mira cómo se ordenan tus clientes por etapas. Prueba el botón: tú decides cuándo trabaja el agente." />
+          sub="Un panel para ver tus contactos por etapas, rescatar a quien no reservó y decidir cuándo trabaja el agente. Prueba las pestañas y el botón." />
         <Reveal>
           <div className="beam rounded-3xl bg-surface p-4 sm:p-6">
             <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
-              <p className="font-heading font-bold text-lg">Pipeline de clientes <span className="text-tx3 text-sm font-medium ml-2">ejemplo ilustrativo</span></p>
+              <div className="flex gap-2 overflow-x-auto" role="tablist">
+                {tabs.map((t) => (
+                  <button key={t} role="tab" aria-selected={tab === t} onClick={() => setTab(t)}
+                    className={`rounded-full px-5 min-h-[44px] text-sm font-bold transition-colors ${tab === t ? "bg-white text-surface" : "border border-white/10 text-tx2 hover:text-white"}`}>{t}</button>
+                ))}
+              </div>
               <button onClick={() => setOn(!on)} role="switch" aria-checked={on}
                 className="flex items-center gap-3 rounded-full border border-white/10 bg-ink px-4 min-h-[44px] text-sm font-bold">
                 Agente IA
@@ -278,28 +339,18 @@ export function Showcase() {
                 <span className={on ? "text-wa" : "text-tx3"}>{on ? "Activo" : "Pausado"}</span>
               </button>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-              {cols.map((c, ci) => (
-                <div key={c.name} className="rounded-2xl bg-ink/70 border border-white/5 p-3">
-                  <p className="text-xs font-bold tracking-wide uppercase text-tx3 mb-3 flex justify-between">{c.name}<span className="text-cy">{c.items.length}</span></p>
-                  <div className="space-y-2.5">
-                    {c.items.map((it, k) => (
-                      <motion.div key={it} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                        transition={{ delay: 0.2 + ci * 0.12 + k * 0.1 }}
-                        className="rounded-xl bg-surface border border-white/10 px-3 py-2.5 text-[13px] text-tx2 leading-snug">
-                        {it}
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div key={tab} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}>
+                <CrmView tab={tab} />
+              </motion.div>
+            </AnimatePresence>
             <AnimatePresence mode="wait">
               <motion.p key={String(on)} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                 className={`mt-5 text-sm rounded-xl px-4 py-3 border ${on ? "border-wa/30 bg-wa/10 text-tx2" : "border-white/10 bg-white/5 text-tx3"}`}>
                 {on ? "El agente responde solo y registra cada contacto en el pipeline." : "Agente en pausa: tu equipo atiende los mensajes manualmente. Lo reactivas con un clic."}
               </motion.p>
             </AnimatePresence>
+            <p className="mt-3 text-xs text-tx3">Ejemplo ilustrativo con datos ficticios.</p>
           </div>
         </Reveal>
       </div>
@@ -307,9 +358,7 @@ export function Showcase() {
   );
 }
 
-
 /* ─── Video (TikTok) con carga diferida ───────────────── */
-const TIKTOK_ID = "7710071056249261333";
 const TIKTOK_PROFILE = "https://www.tiktok.com/@growthlab_ai";
 
 export function VideoSection() {
@@ -330,12 +379,13 @@ export function VideoSection() {
           <div className="beam mx-auto w-[min(100%,300px)] rounded-[2.2rem] bg-surface p-2 shadow-[0_30px_80px_-20px_rgba(192,87,213,.35)]">
             <div className="relative rounded-[1.8rem] overflow-hidden bg-ink" style={{ aspectRatio: "325 / 578" }}>
               {play ? (
-                <iframe title="Video de GrowthLab AI en TikTok" src={`https://www.tiktok.com/embed/v2/${TIKTOK_ID}`}
-                  className="absolute inset-0 w-full h-full border-0" allow="autoplay; fullscreen; encrypted-media" allowFullScreen loading="lazy" />
+                <video src="/video/presentacion.mp4" poster="/video/presentacion.jpg" controls autoPlay playsInline preload="metadata"
+                  className="absolute inset-0 w-full h-full object-cover bg-ink" />
               ) : (
                 <button onClick={() => setPlay(true)} aria-label="Reproducir video"
                   className="absolute inset-0 w-full h-full grid place-items-center bg-gradient-to-br from-cy/20 via-ink to-pu/25 group">
-                  <span className="absolute inset-0 bg-grid opacity-60" />
+                  <img src="/video/presentacion.jpg" alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+                  <span className="absolute inset-0 bg-ink/40" />
                   <span className="relative flex flex-col items-center gap-4">
                     <span className="w-20 h-20 rounded-full bg-cy text-surface grid place-items-center shimmer shadow-[0_10px_40px_-6px_rgba(72,190,215,.7)] group-active:scale-95 transition-transform">
                       <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z" /></svg>

@@ -3,14 +3,14 @@ import { Wordmark, Button, waLink } from "./ui/primitives";
 import { Icon } from "./ui/icons";
 
 const UPDATED = "21 de noviembre de 2026";
-const CONTACT = { mail: "growthlabaiec@gmail.com", tel: "0963 820 234", addr: "Shyris N31-35 y Suecia, Edificio Iqon, piso 6, Quito, Ecuador", web: "www.growthlab-ai.space" };
+const CONTACT = { ruc: "1712517885001",  mail: "growthlabaiec@gmail.com", tel: "0963 820 234", addr: "Shyris N31-35 y Suecia, Edificio Iqon, piso 6, Quito, Ecuador", web: "www.growthlab-ai.space" };
 
 const pages = {
   privacidad: {
     title: "Política de privacidad",
     intro: "En GrowthLab AI cuidamos tus datos personales. Aquí te explicamos qué datos recogemos en este sitio, para qué los usamos y cuáles son tus derechos, conforme a la Ley Orgánica de Protección de Datos Personales del Ecuador.",
     sections: [
-      ["1. Quién es el responsable", [`GrowthLab AI, con domicilio en ${CONTACT.addr}. Puedes escribirnos a ${CONTACT.mail} o al ${CONTACT.tel}.`]],
+      ["1. Quién es el responsable", [`GrowthLab AI, RUC ${CONTACT.ruc}, con domicilio en ${CONTACT.addr}. Puedes escribirnos a ${CONTACT.mail} o al ${CONTACT.tel}.`]],
       ["2. Qué datos recogemos", [
         "Los que tú nos das en el formulario de contacto: nombre, número de WhatsApp, correo electrónico (opcional) y el mensaje sobre lo que necesitas (opcional).",
         "Los datos que nos envíes por WhatsApp cuando nos escribas.",
@@ -46,6 +46,7 @@ const pages = {
         "Los planes mensuales tienen un compromiso mínimo de 6 meses, con pago mensual por adelantado.",
         "Los precios publicados incluyen impuestos y alojamiento.",
         "La instalación se cobra solo en el Plan Agent (pago único); los planes Grow y Ecosystem no la cobran.",
+        "Terminación anticipada: si el cliente da por terminado el servicio antes de cumplir el compromiso mínimo de 6 meses, deberá pagar como penalidad el 50% del valor restante del compromiso.",
       ]],
       ["3. Servicios de pago único", ["Producción audiovisual, landing page, página web completa y tienda online se contratan sin mensualidad. Landing y web completa incluyen dominio y hosting del primer año. La tienda online se cotiza por alcance y su mantenimiento posterior se cobra aparte."]],
       ["4. Publicidad (pauta)", ["La inversión en publicidad no está incluida y se paga directamente a Meta. Nosotros gestionamos las campañas según el plan contratado."]],
@@ -56,7 +57,7 @@ const pages = {
       ["9. Precios y cambios", ["Los precios son los vigentes a la fecha de publicación y pueden cambiar; los que valen para ti son los confirmados en tu propuesta. Podemos actualizar estos términos publicando la versión vigente."]],
       ["10. Uso del sitio", ["Este sitio es informativo. Puedes usarlo y compartir su contenido sin alterarlo; no está permitido el uso indebido ni intentar vulnerar su seguridad."]],
       ["11. Privacidad", ["El tratamiento de tus datos se explica en nuestra Política de privacidad."]],
-      ["12. Ley aplicable y contacto", [`Estos términos se rigen por las leyes de la República del Ecuador. Para cualquier consulta: ${CONTACT.mail} o ${CONTACT.tel}.`]],
+      ["12. Ley aplicable y contacto", [`Estos términos se rigen por las leyes de la República del Ecuador. GrowthLab AI, RUC ${CONTACT.ruc}. Para cualquier consulta: ${CONTACT.mail} o ${CONTACT.tel}.`]],
     ],
   },
 };
