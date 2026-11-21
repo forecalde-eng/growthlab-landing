@@ -358,11 +358,15 @@ export function Showcase() {
   );
 }
 
-/* ─── Video (TikTok) con carga diferida ───────────────── */
+/* ─── Videos (presentación propia + TikTok), carga diferida ── */
+const TIKTOK_ID = "7710071056249261333";
 const TIKTOK_PROFILE = "https://www.tiktok.com/@growthlab_ai";
+const videos = [["local", "Presentación"], ["tiktok", "TikTok"]];
 
 export function VideoSection() {
   const [play, setPlay] = useState(false);
+  const [which, setWhich] = useState("local");
+  const choose = (k) => { setWhich(k); setPlay(false); };
   return (
     <section id="video" className="relative py-20 md:py-28 overflow-hidden">
       <div className="halo top-1/3 left-0 w-[380px] h-[380px] bg-pu/10" />
@@ -376,21 +380,36 @@ export function VideoSection() {
           </div>
         </div>
         <Reveal>
+          <div className="flex justify-center gap-2 mb-5" role="tablist" aria-label="Elegir video">
+            {videos.map(([k, l]) => (
+              <button key={k} role="tab" aria-selected={which === k} onClick={() => choose(k)}
+                className={`rounded-full px-5 min-h-[44px] text-sm font-bold transition-colors ${which === k ? "bg-white text-surface" : "border border-white/10 text-tx2 hover:text-white"}`}>{l}</button>
+            ))}
+          </div>
           <div className="beam mx-auto w-[min(100%,300px)] rounded-[2.2rem] bg-surface p-2 shadow-[0_30px_80px_-20px_rgba(192,87,213,.35)]">
             <div className="relative rounded-[1.8rem] overflow-hidden bg-ink" style={{ aspectRatio: "325 / 578" }}>
               {play ? (
-                <video src="/video/presentacion.mp4" poster="/video/presentacion.jpg" controls autoPlay playsInline preload="metadata"
-                  className="absolute inset-0 w-full h-full object-cover bg-ink" />
+                which === "local" ? (
+                  <video src="/video/presentacion.mp4" poster="/video/presentacion.jpg" controls autoPlay playsInline preload="metadata"
+                    className="absolute inset-0 w-full h-full object-cover bg-ink" />
+                ) : (
+                  <iframe title="Video de GrowthLab AI en TikTok" src={`https://www.tiktok.com/embed/v2/${TIKTOK_ID}`}
+                    className="absolute inset-0 w-full h-full border-0" allow="autoplay; fullscreen; encrypted-media" allowFullScreen />
+                )
               ) : (
                 <button onClick={() => setPlay(true)} aria-label="Reproducir video"
                   className="absolute inset-0 w-full h-full grid place-items-center bg-gradient-to-br from-cy/20 via-ink to-pu/25 group">
-                  <img src="/video/presentacion.jpg" alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
-                  <span className="absolute inset-0 bg-ink/40" />
+                  {which === "local" ? (
+                    <>
+                      <img src="/video/presentacion.jpg" alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+                      <span className="absolute inset-0 bg-ink/40" />
+                    </>
+                  ) : <span className="absolute inset-0 bg-grid opacity-60" />}
                   <span className="relative flex flex-col items-center gap-4">
                     <span className="w-20 h-20 rounded-full bg-cy text-surface grid place-items-center shimmer shadow-[0_10px_40px_-6px_rgba(72,190,215,.7)] group-active:scale-95 transition-transform">
                       <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z" /></svg>
                     </span>
-                    <span className="font-heading font-bold text-lg">Ver video</span>
+                    <span className="font-heading font-bold text-lg">{which === "local" ? "Ver video" : "Ver en TikTok"}</span>
                   </span>
                 </button>
               )}
