@@ -92,7 +92,8 @@ export function Footer() {
         </div>
       </div>
       <div className="mx-auto max-w-6xl px-5 mt-12 pt-6 border-t border-white/5 text-sm text-tx3 flex flex-wrap justify-between gap-2">
-        <span>© 2026 GrowthLab AI · Quito, Ecuador</span><span>www.growthlab-ai.space</span>
+        <span>© 2026 GrowthLab AI · Quito, Ecuador</span>
+        <span className="flex gap-5"><a href="/privacidad" target="_blank" rel="noopener noreferrer" className="hover:text-cy py-2">Política de privacidad</a><a href="/terminos" target="_blank" rel="noopener noreferrer" className="hover:text-cy py-2">Términos y condiciones</a></span>
       </div>
     </footer>
   );

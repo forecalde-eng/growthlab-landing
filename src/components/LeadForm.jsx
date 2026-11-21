@@ -167,6 +167,11 @@ export default function LeadForm() {
                 />
               </div>
 
+              <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13, color: muted, lineHeight: 1.5, cursor: "pointer" }}>
+                <input type="checkbox" required style={{ width: 20, height: 20, marginTop: 1, flexShrink: 0, accentColor: teal }} />
+                <span>Acepto la <a href="/privacidad" target="_blank" rel="noopener noreferrer" style={{ color: teal }}>política de privacidad</a> y el uso de mis datos para que me contacten.</span>
+              </label>
+
               {error && (
                 <p style={{ fontSize: 13, color: "#FF6B6B", background: "rgba(255,107,107,0.08)", border: "1px solid rgba(255,107,107,0.2)", borderRadius: 8, padding: "10px 14px", lineHeight: 1.5 }}>
                   {error}
