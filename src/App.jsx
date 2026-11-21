@@ -1,6 +1,6 @@
 import { MotionConfig } from "framer-motion";
 import Hero, { Navbar } from "./sections/Hero";
-import { Pillars, Contrast, Services, Ecosystem, Showcase, Niches, Process } from "./sections/Offer";
+import { Pillars, Contrast, Services, Ecosystem, Showcase, VideoSection, Niches, Process } from "./sections/Offer";
 import Pricing from "./sections/Pricing";
 import { FAQ, CTA, Footer, FloatingWA, LeadForm } from "./sections/Closing";
 
@@ -17,6 +17,7 @@ export default function App() {
           <Services />
           <Ecosystem />
           <Showcase />
+          <VideoSection />
           <Process />
           <Pricing />
           <FAQ />

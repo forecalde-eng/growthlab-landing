@@ -307,6 +307,48 @@ export function Showcase() {
   );
 }
 
+
+/* ─── Video (TikTok) con carga diferida ───────────────── */
+const TIKTOK_ID = "7710071056249261333";
+const TIKTOK_PROFILE = "https://www.tiktok.com/@growthlab_ai";
+
+export function VideoSection() {
+  const [play, setPlay] = useState(false);
+  return (
+    <section className="relative py-20 md:py-28 overflow-hidden bg-ink2">
+      <div className="halo top-1/3 left-0 w-[380px] h-[380px] bg-pu/10" />
+      <div className="relative mx-auto max-w-6xl px-5 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="text-center lg:text-left">
+          <SectionHead center={false} eyebrow="En acción" title={<>Míranos <span className="grad-text">trabajar</span></>}
+            sub="Mira un video de GrowthLab AI y síguenos en TikTok para ver más ideas para tu negocio." />
+          <Button href={TIKTOK_PROFILE} variant="ghost" icon="arrow">@growthlab_ai en TikTok</Button>
+        </div>
+        <Reveal>
+          <div className="beam mx-auto w-[min(100%,300px)] rounded-[2.2rem] bg-surface p-2 shadow-[0_30px_80px_-20px_rgba(192,87,213,.35)]">
+            <div className="relative rounded-[1.8rem] overflow-hidden bg-ink" style={{ aspectRatio: "325 / 578" }}>
+              {play ? (
+                <iframe title="Video de GrowthLab AI en TikTok" src={`https://www.tiktok.com/embed/v2/${TIKTOK_ID}`}
+                  className="absolute inset-0 w-full h-full border-0" allow="autoplay; fullscreen; encrypted-media" allowFullScreen loading="lazy" />
+              ) : (
+                <button onClick={() => setPlay(true)} aria-label="Reproducir video"
+                  className="absolute inset-0 w-full h-full grid place-items-center bg-gradient-to-br from-cy/20 via-ink to-pu/25 group">
+                  <span className="absolute inset-0 bg-grid opacity-60" />
+                  <span className="relative flex flex-col items-center gap-4">
+                    <span className="w-20 h-20 rounded-full bg-cy text-surface grid place-items-center shimmer shadow-[0_10px_40px_-6px_rgba(72,190,215,.7)] group-active:scale-95 transition-transform">
+                      <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z" /></svg>
+                    </span>
+                    <span className="font-heading font-bold text-lg">Ver video</span>
+                  </span>
+                </button>
+              )}
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Para quién ───────────────────────────────────────── */
 const niches = ["Clínicas y especialistas de salud", "Spas y estética", "Inmobiliarias", "Veterinarias", "Cualquier negocio que reciba clientes por WhatsApp"];
 export function Niches() {
