@@ -9,11 +9,13 @@ const legalPages = () => ({
   name: 'legal-pages',
   closeBundle() {
     const dist = path.resolve(__dirname, 'dist')
-    const html = fs.readFileSync(path.join(dist, 'index.html'))
+    const html = fs.readFileSync(path.join(dist, 'index.html'), 'utf8')
     for (const dir of ['privacidad', 'terminos']) {
+      // canonical y og:url propios, si no Google la trata como copia de la home
+      const page = html.replace(/(canonical" href|og:url" content)="https:\/\/growthlab-ai\.space\/"/g, `$1="https://growthlab-ai.space/${dir}"`)
       fs.mkdirSync(path.join(dist, dir), { recursive: true })
-      fs.writeFileSync(path.join(dist, dir, 'index.html'), html)
-      fs.writeFileSync(path.join(dist, dir + '.html'), html)
+      fs.writeFileSync(path.join(dist, dir, 'index.html'), page)
+      fs.writeFileSync(path.join(dist, dir + '.html'), page)
     }
     fs.writeFileSync(path.join(dist, '404.html'), html)
   },
